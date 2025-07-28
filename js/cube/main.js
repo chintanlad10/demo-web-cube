@@ -5,6 +5,8 @@ import Cube from "./Cube.js";
 import {
     Axes,
     KeysToMoves,
+    KeysToCommands,
+    SpecialKeys,
     ClickFlags,
     MoveFlags,
     ANIMATION_SPEED,
@@ -54,6 +56,14 @@ let solving = false;
 const domElement = document.getElementById("three");
 // find the solve button
 const solveButton = document.getElementById("solve-button");
+// find the reset button
+const resetButton = document.getElementById("reset-button");
+// find the solve stats display
+const solveStatsDisplay = document.getElementById("solve-stats");
+
+// Variables for tracking solve statistics
+let solveStartTime = 0;
+let solveMoveCount = 0;
 
 // create a scene
 const scene = new THREE.Scene();
@@ -141,15 +151,21 @@ const solveCube = () => {
         return;
     }
 
+    // Reset move count and start timing
+    solveMoveCount = 0;
+    solveStartTime = performance.now();
+
     // process each solution move
     solution.split(" ").forEach((move) => {
         if (move[1] === "2") {
             // if a double move, push two of the single version
             moveBuffer.push(move[0]);
             moveBuffer.push(move[0]);
+            solveMoveCount += 2;
         } else {
             // otherwise push the regular or prime move
             moveBuffer.push(move);
+            solveMoveCount += 1;
         }
     });
     // push flag signaling end of the solution
@@ -175,6 +191,14 @@ const update = () => {
         if (move === MoveFlags.SOLUTION_END) {
             solving = false;
             animating = false;
+            // Calculate solve time and display statistics
+            const solveTime = ((performance.now() - solveStartTime) / 1000).toFixed(2);
+            solveStatsDisplay.innerHTML = `
+                <div>✅ Cube Solved!</div>
+                <div>⏱️ Time: ${solveTime}s</div>
+                <div>🔄 Moves: ${solveMoveCount}</div>
+            `;
+            solveStatsDisplay.style.display = 'block';
         } else if (move === MoveFlags.SOLUTION_START) {
             solveCube();
         } else {
@@ -228,13 +252,36 @@ const onKeyPress = (event) => {
     // do nothing if solving
     if (solving) return;
 
+    // check for special commands first
+    if (KeysToCommands[event.key] !== undefined) {
+        const command = KeysToCommands[event.key];
+        if (command === SpecialKeys.RESET) {
+            // do nothing if animating
+            if (animating) return;
+            
+            // hide solve stats if visible
+            solveStatsDisplay.style.display = 'none';
+            
+            // clear move buffer
+            moveBuffer.length = 0;
+            
+            // reset the cube
+            cube.reset();
+            return;
+        }
+    }
+
     // append 'w' if holding w
     const key = holdingW ? "w" + event.key : event.key;
 
     if (KeysToMoves[key] !== undefined) {
+        // hide solve stats if visible when making manual moves
+        solveStatsDisplay.style.display = 'none';
         // push normal move if key is in KeysToMoves map
         moveBuffer.push(KeysToMoves[key]);
     } else if (event.key === "Enter") {
+        // hide solve stats if visible
+        solveStatsDisplay.style.display = 'none';
         // set solving to true and queue a solve request
         solving = true;
         moveBuffer.push(MoveFlags.SOLUTION_START);
@@ -258,9 +305,27 @@ solveButton.onclick = () => {
     // do nothing if solving
     if (solving) return;
 
+    // hide solve stats if visible
+    solveStatsDisplay.style.display = 'none';
+
     // set solving to true and queue a solve request
     solving = true;
     moveBuffer.push(MoveFlags.SOLUTION_START);
+};
+
+// have reset button reset the cube
+resetButton.onclick = () => {
+    // do nothing if solving or animating
+    if (solving || animating) return;
+
+    // hide solve stats if visible
+    solveStatsDisplay.style.display = 'none';
+
+    // clear move buffer
+    moveBuffer.length = 0;
+
+    // reset the cube
+    cube.reset();
 };
 
 /**
@@ -401,6 +466,9 @@ const onDocumentMouseMove = (event) => {
     }
 
     // user is performing a move
+
+    // hide solve stats if visible when making manual moves
+    solveStatsDisplay.style.display = 'none';
 
     // get the mesh for the selected sticker
     const selectedSticker = cube.stickersMap.get(selectedObject.object.uuid);

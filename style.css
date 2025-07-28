@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap');
+
 #solve-button {
     font-family: "Sen", sans-serif;
     position: absolute;
@@ -20,4 +22,42 @@
 #solve-button:hover {
     background-color: #0c75e8;
     color: white;
+}
+
+#reset-button {
+    font-family: "Sen", sans-serif;
+    position: absolute;
+    top: 15px;
+    right: 85px;
+    display: inline-block;
+    background-color: #f5f5f5;
+    font-size: 15px;
+    padding: 5px 10px;
+    margin: 2.5px 0;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
+}
+
+#reset-button:hover {
+    background-color: #ff4444;
+    color: white;
+}
+
+#solve-stats {
+    font-family: "Sen", sans-serif;
+    position: absolute;
+    top: 65px;
+    right: 15px;
+    background-color: rgba(245, 245, 245, 0.95);
+    padding: 10px 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

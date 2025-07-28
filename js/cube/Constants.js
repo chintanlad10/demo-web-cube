@@ -95,3 +95,17 @@ export const KeysToMoves = Object.freeze({
     wR: "r'",
     wL: "l'",
 });
+
+/**
+ * Special key commands
+ */
+export const SpecialKeys = Object.freeze({
+    RESET: "RESET",
+});
+
+/**
+ * Map from key presses to special commands
+ */
+export const KeysToCommands = Object.freeze({
+    "Escape": SpecialKeys.RESET,
+});

@@ -345,6 +345,73 @@ class Cube {
             }
         });
     }
+
+    /**
+     * Reset the cube to its solved state.
+     */
+    reset() {
+        // Reset each cubie to its original position and rotation
+        this.cubies.forEach((cubie) => {
+            // Stop any ongoing animation
+            cubie.animating = false;
+            cubie.angle = 0;
+            cubie.animateAxis = null;
+            cubie.animateDir = 0;
+
+            // Calculate original position based on sticker colors
+            let originalPosition = this.getOriginalPosition(cubie);
+            
+            // Reset position vectors
+            cubie.positionVector.copy(originalPosition);
+            cubie.fixedPositionVector.copy(originalPosition);
+            
+            // Reset mesh position and rotation
+            cubie.updatePosition(originalPosition);
+            cubie.mesh.rotation.x = 0;
+            cubie.mesh.rotation.y = 0;
+            cubie.mesh.rotation.z = 0;
+
+            // Reset stickers
+            cubie.stickers.forEach((sticker) => {
+                sticker.reset(originalPosition);
+            });
+        });
+    }
+
+    /**
+     * Determine the original position of a cubie based on its sticker colors.
+     * @param {*} cubie The cubie to find the original position for
+     * @returns {THREE.Vector3} The original position vector
+     */
+    getOriginalPosition(cubie) {
+        let x = 0, y = 0, z = 0;
+        
+        cubie.stickers.forEach((sticker) => {
+            const color = sticker.getColor();
+            switch (color) {
+                case "W": // White - up face (y = 1)
+                    y = 1;
+                    break;
+                case "Y": // Yellow - down face (y = -1)
+                    y = -1;
+                    break;
+                case "R": // Red - front face (z = 1)
+                    z = 1;
+                    break;
+                case "O": // Orange - back face (z = -1)
+                    z = -1;
+                    break;
+                case "B": // Blue - right face (x = 1)
+                    x = 1;
+                    break;
+                case "G": // Green - left face (x = -1)
+                    x = -1;
+                    break;
+            }
+        });
+        
+        return new THREE.Vector3(x, y, z);
+    }
 }
 
 export default Cube;

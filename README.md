@@ -10,6 +10,14 @@ To view this program running in browser, visit https://keatonmueller.com/cube.ht
 
 Alternatively, you can clone this repo and open `index.html` using a server (see [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) for an easy way to do that using VS Code).
 
+## Features
+
+- **Interactive 3D Cube**: Rotate and manipulate a realistic Rubik's cube using keyboard or mouse/touch controls
+- **Automatic Solver**: Uses a compiled C++ solver with the CFOP method to solve any scrambled cube state
+- **Solve Statistics**: After solving, displays the time taken and number of moves used
+- **Reset Functionality**: Instantly reset the cube to its solved state
+- **Responsive Design**: Works on desktop and mobile devices with touch support
+
 ## Controls
 
 The controls support clockwise and counterclockwise face and slice rotations, as well as entire cube rotations.
@@ -22,7 +30,9 @@ A table containing valid inputs is below, and you can learn about Rubik's Cube n
 
 The program also supports clicking and dragging to make turns. To execute a turn, click on a sticker and drag in the direction you want it to move. Clicking and dragging outside of the cube causes cube rotations.
 
-In addition to turning, hitting the `ENTER` key or the solve button will run the cube solver program, and you can watch as the cube solves itself.
+In addition to turning, hitting the `ENTER` key or the solve button will run the cube solver program, and you can watch as the cube solves itself. After solving, the program displays the time taken and number of moves used.
+
+The `RESET` button or pressing `ESC` will reset the cube to its solved state.
 
 Below are keystrokes and the moves they correspond to:
 
@@ -46,4 +56,4 @@ Below are keystrokes and the moves they correspond to:
 | `X`       | x          | `SHIFT + X`     | x'     |
 | `Y`       | y          | `SHIFT + Y`     | y'     |
 | `Z`       | z          | `SHIFT + Z`     | z'     |
-| `ENTER`   | Solve Cube |                 |        |
+| `ENTER`   | Solve Cube | `ESC`           | Reset Cube |

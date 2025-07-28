@@ -168,6 +168,52 @@ class Sticker {
         this.updatePosition(this.positionVector, this.facingVector);
         this.mesh.rotateOnWorldAxis(AxisVectors[axis], theta);
     }
+
+    /**
+     * Reset the sticker to its original position and orientation.
+     * @param {THREE.Vector3} originalPosition The original position to reset to
+     */
+    reset(originalPosition) {
+        // Reset position vectors
+        this.positionVector.copy(originalPosition);
+        this.fixedPositionVector.copy(originalPosition);
+        
+        // Reset facing vector based on original position
+        this.facingVector = this.getOriginalFacingVector(originalPosition);
+        this.fixedFacingVector.copy(this.facingVector);
+        
+        // Update mesh position and rotation
+        this.updatePosition(this.positionVector, this.facingVector);
+        this.mesh.rotation.x = 0;
+        this.mesh.rotation.y = 0;
+        this.mesh.rotation.z = 0;
+        this.lockPosition();
+    }
+
+    /**
+     * Calculate the original facing vector based on position and color.
+     * @param {THREE.Vector3} position The position of the sticker
+     * @returns {THREE.Vector3} The original facing vector
+     */
+    getOriginalFacingVector(position) {
+        const color = this.getColor();
+        switch (color) {
+            case "W": // White - up face
+                return new THREE.Vector3(0, 1, 0);
+            case "Y": // Yellow - down face
+                return new THREE.Vector3(0, -1, 0);
+            case "R": // Red - front face
+                return new THREE.Vector3(0, 0, 1);
+            case "O": // Orange - back face
+                return new THREE.Vector3(0, 0, -1);
+            case "B": // Blue - right face
+                return new THREE.Vector3(1, 0, 0);
+            case "G": // Green - left face
+                return new THREE.Vector3(-1, 0, 0);
+            default:
+                return new THREE.Vector3(0, 1, 0);
+        }
+    }
 }
 
 export default Sticker;
