@@ -14,59 +14,64 @@
         </header>
         
         <div class="main-content">
-            <div class="controls-section">
-                <div class="button-row">
-                    <button id="reset-button">RESET</button>
-                    <button id="solve-button">SOLVE</button>
-                </div>
-                <h2>Main Controls</h2>
-                <table class="controls-table">
-                    <thead>
-                        <tr>
-                            <th>Key Combination</th>
-                            <th>Action</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><kbd>U</kbd>, <kbd>D</kbd>, <kbd>F</kbd>, <kbd>B</kbd>, <kbd>R</kbd>, <kbd>L</kbd></td>
-                            <td>Face Rotations</td>
-                            <td>Rotate cube faces clockwise</td>
-                        </tr>
-                        <tr>
-                            <td><kbd>⇧ + Face Key</kbd></td>
-                            <td>Counter-clockwise</td>
-                            <td>Rotate faces counter-clockwise</td>
-                        </tr>
-                        <tr>
-                            <td><kbd>⏎</kbd></td>
-                            <td>Solve</td>
-                            <td>Automatically solve the cube</td>
-                        </tr>
-                        <tr>
-                            <td><kbd>⎋</kbd></td>
-                            <td>Reset</td>
-                            <td>Reset cube to solved state</td>
-                        </tr>
-                        <tr>
-                            <td><kbd>Mouse Drag</kbd></td>
-                            <td>Rotate View</td>
-                            <td>Click and drag to rotate the cube view</td>
-                        </tr>
-                        <tr>
-                            <td><kbd>Scroll Wheel</kbd></td>
-                            <td>Zoom</td>
-                            <td>Zoom in/out of the cube</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="three-container">
+            <div class="cube-buttons">
+                <button id="reset-button">RESET</button>
+                <button id="solve-button">SOLVE</button>
                 <div id="solve-stats" style="display: none;"></div>
-                <div id="three"></div>
             </div>
-            <!-- Optionally, add a third section here if needed -->
+            
+            <div class="content-container">
+                <div class="controls-section">
+                    <h2>Main Controls</h2>
+                    <table class="controls-table">
+                        <thead>
+                            <tr>
+                                <th>Key Combination</th>
+                                <th>Action</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><kbd>U</kbd>, <kbd>D</kbd>, <kbd>F</kbd>, <kbd>B</kbd>, <kbd>R</kbd>, <kbd>L</kbd></td>
+                                <td>Face Rotations</td>
+                                <td>Rotate cube faces clockwise</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>⇧ + Face Key</kbd></td>
+                                <td>Counter-clockwise</td>
+                                <td>Rotate faces counter-clockwise</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>⏎</kbd></td>
+                                <td>Solve</td>
+                                <td>Automatically solve the cube</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>Esc</kbd></td>
+                                <td>Reset</td>
+                                <td>Reset cube to solved state</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>Mouse Drag</kbd></td>
+                                <td>Rotate View</td>
+                                <td>Click and drag to rotate the cube view</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>Scroll Wheel</kbd></td>
+                                <td>Zoom</td>
+                                <td>Zoom in/out of the cube</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="three-container">
+                    <div id="three"></div>
+                </div>
+            </div>
         </div>
         
         <script src="js/cube/main.js" type="module"></script>

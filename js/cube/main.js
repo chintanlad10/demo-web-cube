@@ -300,6 +300,34 @@ const onKeyUp = (event) => {
 };
 document.addEventListener("keyup", onKeyUp, false);
 
+/**
+ * Handle key down event for special keys like Escape
+ */
+const onKeyDown = (event) => {
+    // do nothing if solving
+    if (solving) return;
+
+    // check for special commands
+    if (KeysToCommands[event.key] !== undefined) {
+        const command = KeysToCommands[event.key];
+        if (command === SpecialKeys.RESET) {
+            // do nothing if animating
+            if (animating) return;
+            
+            // hide solve stats if visible
+            solveStatsDisplay.style.display = 'none';
+            
+            // clear move buffer
+            moveBuffer.length = 0;
+            
+            // reset the cube
+            cube.reset();
+            return;
+        }
+    }
+};
+document.addEventListener("keydown", onKeyDown, false);
+
 // have solve button queue a solve
 solveButton.onclick = () => {
     // do nothing if solving
