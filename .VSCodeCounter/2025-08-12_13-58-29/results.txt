@@ -1,0 +1,50 @@
+Date : 2025-08-12 13:58:29
+Directory : /Users/chintan/Drive/Projects/demo-web-cube
+Total : 15 files,  7161 codes, 989 comments, 1159 blanks, all 9309 lines
+
+Languages
++-------------------------+------------+------------+------------+------------+------------+
+| language                | files      | code       | comment    | blank      | total      |
++-------------------------+------------+------------+------------+------------+------------+
+| JavaScript              |          8 |      4,243 |        967 |        852 |      6,062 |
+| WebAssembly Text Format |          1 |      2,265 |          0 |        185 |      2,450 |
+| PostCSS                 |          1 |        345 |          5 |         48 |        398 |
+| Markdown                |          2 |        155 |          0 |         49 |        204 |
+| Shell Script            |          2 |         78 |         17 |         19 |        114 |
+| HTML                    |          1 |         75 |          0 |          6 |         81 |
++-------------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                        | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                           |         15 |      7,161 |        989 |      1,159 |      9,309 |
+| . (Files)                                                                   |          6 |        653 |         22 |        122 |        797 |
+| js                                                                          |          9 |      6,508 |        967 |      1,037 |      8,512 |
+| js/cube                                                                     |          8 |      5,775 |        890 |        752 |      7,417 |
+| js/cube (Files)                                                             |          6 |      1,068 |        419 |        143 |      1,630 |
+| js/cube/solver                                                              |          2 |      4,707 |        471 |        609 |      5,787 |
+| js/three                                                                    |          1 |        733 |         77 |        285 |      1,095 |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------+-------------------------+------------+------------+------------+------------+
+| filename                                                                    | language                | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------+-------------------------+------------+------------+------------+------------+
+| /Users/chintan/Drive/Projects/demo-web-cube/README.md                       | Markdown                |        155 |          0 |         48 |        203 |
+| /Users/chintan/Drive/Projects/demo-web-cube/explain.md                      | Markdown                |          0 |          0 |          1 |          1 |
+| /Users/chintan/Drive/Projects/demo-web-cube/index.html                      | HTML                    |         75 |          0 |          6 |         81 |
+| /Users/chintan/Drive/Projects/demo-web-cube/js/cube/Constants.js            | JavaScript              |         75 |         28 |          9 |        112 |
+| /Users/chintan/Drive/Projects/demo-web-cube/js/cube/Cube.js                 | JavaScript              |        326 |         72 |         20 |        418 |
+| /Users/chintan/Drive/Projects/demo-web-cube/js/cube/Cubie.js                | JavaScript              |        113 |         52 |         18 |        183 |
+| /Users/chintan/Drive/Projects/demo-web-cube/js/cube/RotationMatrices.js     | JavaScript              |         60 |         29 |          9 |         98 |
+| /Users/chintan/Drive/Projects/demo-web-cube/js/cube/Sticker.js              | JavaScript              |        137 |         65 |         18 |        220 |
+| /Users/chintan/Drive/Projects/demo-web-cube/js/cube/main.js                 | JavaScript              |        357 |        173 |         69 |        599 |
+| /Users/chintan/Drive/Projects/demo-web-cube/js/cube/solver/cube-solver.js   | JavaScript              |      2,442 |        471 |        424 |      3,337 |
+| /Users/chintan/Drive/Projects/demo-web-cube/js/cube/solver/cube-solver.wasm | WebAssembly Text Format |      2,265 |          0 |        185 |      2,450 |
+| /Users/chintan/Drive/Projects/demo-web-cube/js/three/OrbitControls.js       | JavaScript              |        733 |         77 |        285 |      1,095 |
+| /Users/chintan/Drive/Projects/demo-web-cube/quick-start.sh                  | Shell Script            |         24 |          3 |          3 |         30 |
+| /Users/chintan/Drive/Projects/demo-web-cube/setup-solver.sh                 | Shell Script            |         54 |         14 |         16 |         84 |
+| /Users/chintan/Drive/Projects/demo-web-cube/style.css                       | PostCSS                 |        345 |          5 |         48 |        398 |
+| Total                                                                       |                         |      7,161 |        989 |      1,159 |      9,309 |
++-----------------------------------------------------------------------------+-------------------------+------------+------------+------------+------------+

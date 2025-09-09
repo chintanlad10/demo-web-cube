@@ -1,0 +1,17 @@
+"filename", "language", "PostCSS", "Markdown", "Shell Script", "JavaScript", "WebAssembly Text Format", "HTML", "comment", "blank", "total"
+"/Users/chintan/Drive/Projects/demo-web-cube/README.md", "Markdown", 0, 155, 0, 0, 0, 0, 0, 48, 203
+"/Users/chintan/Drive/Projects/demo-web-cube/explain.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/chintan/Drive/Projects/demo-web-cube/index.html", "HTML", 0, 0, 0, 0, 0, 75, 0, 6, 81
+"/Users/chintan/Drive/Projects/demo-web-cube/js/cube/Constants.js", "JavaScript", 0, 0, 0, 75, 0, 0, 28, 9, 112
+"/Users/chintan/Drive/Projects/demo-web-cube/js/cube/Cube.js", "JavaScript", 0, 0, 0, 326, 0, 0, 72, 20, 418
+"/Users/chintan/Drive/Projects/demo-web-cube/js/cube/Cubie.js", "JavaScript", 0, 0, 0, 113, 0, 0, 52, 18, 183
+"/Users/chintan/Drive/Projects/demo-web-cube/js/cube/RotationMatrices.js", "JavaScript", 0, 0, 0, 60, 0, 0, 29, 9, 98
+"/Users/chintan/Drive/Projects/demo-web-cube/js/cube/Sticker.js", "JavaScript", 0, 0, 0, 137, 0, 0, 65, 18, 220
+"/Users/chintan/Drive/Projects/demo-web-cube/js/cube/main.js", "JavaScript", 0, 0, 0, 357, 0, 0, 173, 69, 599
+"/Users/chintan/Drive/Projects/demo-web-cube/js/cube/solver/cube-solver.js", "JavaScript", 0, 0, 0, 2442, 0, 0, 471, 424, 3337
+"/Users/chintan/Drive/Projects/demo-web-cube/js/cube/solver/cube-solver.wasm", "WebAssembly Text Format", 0, 0, 0, 0, 2265, 0, 0, 185, 2450
+"/Users/chintan/Drive/Projects/demo-web-cube/js/three/OrbitControls.js", "JavaScript", 0, 0, 0, 733, 0, 0, 77, 285, 1095
+"/Users/chintan/Drive/Projects/demo-web-cube/quick-start.sh", "Shell Script", 0, 0, 24, 0, 0, 0, 3, 3, 30
+"/Users/chintan/Drive/Projects/demo-web-cube/setup-solver.sh", "Shell Script", 0, 0, 54, 0, 0, 0, 14, 16, 84
+"/Users/chintan/Drive/Projects/demo-web-cube/style.css", "PostCSS", 345, 0, 0, 0, 0, 0, 5, 48, 398
+"Total", "-", 345, 155, 78, 4243, 2265, 75, 989, 1159, 9309
